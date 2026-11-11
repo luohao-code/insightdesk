@@ -1,0 +1,35 @@
+{
+  "name": "识文台 InsightDesk",
+  "short_name": "识文台",
+  "description": "OCR + AI 智能文字工作台：识别、翻译、摘要、检索与导出。",
+  "lang": "zh-CN",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#070b14",
+  "theme_color": "#070b14",
+  "categories": ["productivity", "utilities"],
+  "icons": [
+    {
+      "src": "./assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "OCR 识别",
+      "short_name": "识别",
+      "url": "./#/ocr",
+      "description": "上传图片并识别文字"
+    },
+    {
+      "name": "历史记录",
+      "short_name": "历史",
+      "url": "./#/history",
+      "description": "检索已保存的文字资产"
+    }
+  ]
+}

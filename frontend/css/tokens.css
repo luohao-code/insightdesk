@@ -1,0 +1,164 @@
+/* ==========================================================================
+   设计令牌
+   - 所有颜色、间距、圆角、阴影集中定义，便于统一换肤
+   - 深色为主视觉，浅色为可选主题
+   ========================================================================== */
+
+:root {
+  --font-sans: "Inter", "PingFang SC", "Microsoft YaHei", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "Cascadia Code", "SFMono-Regular", Consolas, monospace;
+
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 999px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+  --space-9: 56px;
+
+  --text-xs: 11px;
+  --text-sm: 12px;
+  --text-base: 14px;
+  --text-md: 15px;
+  --text-lg: 18px;
+  --text-xl: 22px;
+  --text-2xl: 28px;
+  --text-3xl: 36px;
+
+  --sidebar-width: 244px;
+  --topbar-height: 72px;
+  --content-max: 1480px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 140ms;
+  --duration-base: 240ms;
+  --duration-slow: 480ms;
+
+  --z-sidebar: 40;
+  --z-topbar: 30;
+  --z-modal: 80;
+  --z-toast: 90;
+  --z-palette: 100;
+}
+
+:root,
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #070b14;
+  --bg-soft: #0a1020;
+  --bg-elevated: #0e1626;
+  --panel: rgba(17, 26, 43, 0.86);
+  --panel-solid: #111a2b;
+  --panel-2: #162034;
+  --panel-3: #1c2840;
+
+  --border: rgba(148, 163, 184, 0.14);
+  --border-strong: rgba(148, 163, 184, 0.26);
+
+  --text: #e9eefc;
+  --text-soft: #c3cee3;
+  --muted: #8b9bb4;
+  --muted-2: #64748b;
+
+  --accent: #6366f1;
+  --accent-strong: #818cf8;
+  --accent-soft: rgba(99, 102, 241, 0.16);
+  --accent-contrast: #ffffff;
+
+  --cyan: #22d3ee;
+  --cyan-soft: rgba(34, 211, 238, 0.14);
+  --green: #34d399;
+  --green-soft: rgba(52, 211, 153, 0.14);
+  --amber: #fbbf24;
+  --amber-soft: rgba(251, 191, 36, 0.14);
+  --red: #f87171;
+  --red-soft: rgba(248, 113, 113, 0.14);
+  --violet: #a78bfa;
+  --violet-soft: rgba(167, 139, 250, 0.14);
+
+  --gradient-brand: linear-gradient(135deg, #818cf8 0%, #22d3ee 100%);
+  --gradient-warm: linear-gradient(135deg, #fbbf24 0%, #f87171 100%);
+  --gradient-panel: linear-gradient(160deg, rgba(99, 102, 241, 0.12), rgba(34, 211, 238, 0.04) 55%, transparent);
+
+  --shadow-sm: 0 1px 2px rgba(2, 6, 23, 0.5);
+  --shadow-md: 0 12px 32px rgba(2, 6, 23, 0.45);
+  --shadow-lg: 0 28px 70px rgba(2, 6, 23, 0.6);
+  --shadow-glow: 0 0 0 1px rgba(99, 102, 241, 0.35), 0 18px 50px rgba(79, 70, 229, 0.28);
+
+  --editor-bg: rgba(8, 13, 24, 0.72);
+  --overlay: rgba(3, 7, 18, 0.72);
+  --scrollbar: rgba(148, 163, 184, 0.28);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --bg: #f4f6fb;
+  --bg-soft: #eef2f9;
+  --bg-elevated: #ffffff;
+  --panel: rgba(255, 255, 255, 0.92);
+  --panel-solid: #ffffff;
+  --panel-2: #f7f9fd;
+  --panel-3: #eef2f9;
+
+  --border: rgba(15, 23, 42, 0.09);
+  --border-strong: rgba(15, 23, 42, 0.18);
+
+  --text: #0f172a;
+  --text-soft: #334155;
+  --muted: #64748b;
+  --muted-2: #94a3b8;
+
+  --accent: #4f46e5;
+  --accent-strong: #4338ca;
+  --accent-soft: rgba(79, 70, 229, 0.1);
+  --accent-contrast: #ffffff;
+
+  --cyan: #0891b2;
+  --cyan-soft: rgba(8, 145, 178, 0.1);
+  --green: #059669;
+  --green-soft: rgba(5, 150, 105, 0.1);
+  --amber: #b45309;
+  --amber-soft: rgba(180, 83, 9, 0.1);
+  --red: #dc2626;
+  --red-soft: rgba(220, 38, 38, 0.09);
+  --violet: #7c3aed;
+  --violet-soft: rgba(124, 58, 237, 0.09);
+
+  --gradient-brand: linear-gradient(135deg, #4f46e5 0%, #0891b2 100%);
+  --gradient-warm: linear-gradient(135deg, #d97706 0%, #dc2626 100%);
+  --gradient-panel: linear-gradient(160deg, rgba(79, 70, 229, 0.08), rgba(8, 145, 178, 0.04) 55%, transparent);
+
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 12px 28px rgba(15, 23, 42, 0.1);
+  --shadow-lg: 0 28px 64px rgba(15, 23, 42, 0.14);
+  --shadow-glow: 0 0 0 1px rgba(79, 70, 229, 0.22), 0 18px 44px rgba(79, 70, 229, 0.18);
+
+  --editor-bg: rgba(255, 255, 255, 0.9);
+  --overlay: rgba(15, 23, 42, 0.42);
+  --scrollbar: rgba(71, 85, 105, 0.3);
+}
+
+@media (max-width: 1100px) {
+  :root {
+    --sidebar-width: 214px;
+  }
+}
+
+@media (max-width: 860px) {
+  :root {
+    --topbar-height: 64px;
+    --text-3xl: 30px;
+  }
+}

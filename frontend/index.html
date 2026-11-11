@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#070b14" />
+    <meta
+      name="description"
+      content="识文台 InsightDesk：OCR + AI 智能文字工作台，支持批量识别、翻译摘要、历史检索、网页提取与多格式导出。"
+    />
+    <title>识文台 InsightDesk · OCR + AI 智能文字工作台</title>
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+    <link rel="stylesheet" href="./css/tokens.css" />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/layout.css" />
+    <link rel="stylesheet" href="./css/components.css" />
+    <link rel="stylesheet" href="./css/pages.css" />
+    <link rel="stylesheet" href="./css/animations.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#view">跳到主要内容</a>
+
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar" aria-label="主导航">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none">
+              <rect x="4" y="6" width="40" height="36" rx="11" stroke="url(#brandGradient)" stroke-width="2.4" />
+              <path d="M14 17h20M14 24h13M14 31h17" stroke="url(#brandGradient)" stroke-width="2.6" stroke-linecap="round" />
+              <circle cx="35" cy="31" r="4.2" fill="url(#brandGradient)" />
+              <defs>
+                <linearGradient id="brandGradient" x1="4" y1="6" x2="44" y2="42" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#818cf8" />
+                  <stop offset="1" stop-color="#22d3ee" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="brand-text">
+            <strong>识文台</strong>
+            <span>InsightDesk</span>
+          </div>
+          <span class="brand-version" id="brand-version">v1.0</span>
+        </div>
+
+        <nav class="nav" id="nav">
+          <div class="nav-group">
+            <p class="nav-label">核心工作</p>
+            <button class="nav-item" data-route="dashboard" type="button">
+              <span class="nav-icon" data-icon="dashboard"></span>
+              <span class="nav-text">工作台</span>
+            </button>
+            <button class="nav-item" data-route="ocr" type="button">
+              <span class="nav-icon" data-icon="scan"></span>
+              <span class="nav-text">OCR 识别</span>
+              <span class="nav-badge" id="nav-ocr-badge" hidden></span>
+            </button>
+            <button class="nav-item" data-route="batch" type="button">
+              <span class="nav-icon" data-icon="layers"></span>
+              <span class="nav-text">批量任务</span>
+              <span class="nav-badge nav-badge-live" id="nav-batch-badge" hidden></span>
+            </button>
+            <button class="nav-item" data-route="ai" type="button">
+              <span class="nav-icon" data-icon="sparkles"></span>
+              <span class="nav-text">AI 助手</span>
+            </button>
+          </div>
+
+          <div class="nav-group">
+            <p class="nav-label">资产管理</p>
+            <button class="nav-item" data-route="history" type="button">
+              <span class="nav-icon" data-icon="archive"></span>
+              <span class="nav-text">历史记录</span>
+            </button>
+            <button class="nav-item" data-route="web" type="button">
+              <span class="nav-icon" data-icon="globe"></span>
+              <span class="nav-text">网页提取</span>
+            </button>
+          </div>
+
+          <div class="nav-group">
+            <p class="nav-label">系统</p>
+            <button class="nav-item" data-route="settings" type="button">
+              <span class="nav-icon" data-icon="settings"></span>
+              <span class="nav-text">设置</span>
+            </button>
+            <button class="nav-item" data-route="help" type="button">
+              <span class="nav-icon" data-icon="help"></span>
+              <span class="nav-text">帮助与关于</span>
+            </button>
+          </div>
+        </nav>
+
+        <div class="sidebar-footer">
+          <div class="engine-status" id="engine-status">
+            <span class="status-dot" id="engine-dot"></span>
+            <div class="engine-status-text">
+              <strong id="engine-label">正在检测引擎…</strong>
+              <span id="engine-detail">请稍候</span>
+            </div>
+          </div>
+          <p class="sidebar-tip">识别结果仅保存在本机</p>
+        </div>
+      </aside>
+
+      <div class="sidebar-backdrop" id="sidebar-backdrop" hidden></div>
+
+      <div class="app-main">
+        <header class="topbar">
+          <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="切换导航">
+            <span data-icon="menu"></span>
+          </button>
+
+          <div class="topbar-title">
+            <h1 id="page-title">工作台</h1>
+            <p id="page-subtitle">识别、理解并沉淀每一条文字信息</p>
+          </div>
+
+          <div class="topbar-actions">
+            <button class="search-trigger" id="search-btn" type="button" aria-label="打开命令面板">
+              <span data-icon="search"></span>
+              <span class="search-text">搜索与快捷操作</span>
+              <kbd>Ctrl K</kbd>
+            </button>
+            <span class="pill pill-soft" id="engine-pill">引擎检测中</span>
+            <button class="icon-btn" id="theme-btn" type="button" aria-label="切换主题">
+              <span data-icon="moon"></span>
+            </button>
+          </div>
+        </header>
+
+        <main class="view" id="view" tabindex="-1">
+          <div class="loading-screen">
+            <div class="loading-orbit"></div>
+            <p>正在加载识文台…</p>
+          </div>
+        </main>
+
+        <footer class="app-footer">
+          <span>识文台 InsightDesk v1.0 · 课程综合实践 2</span>
+          <span class="footer-links">
+            <a href="./api/docs" target="_blank" rel="noopener">API 文档</a>
+            <a href="#/help">使用帮助</a>
+            <span id="footer-status">本地运行</span>
+          </span>
+        </footer>
+      </div>
+    </div>
+
+    <div id="toast-root" class="toast-root" aria-live="polite" aria-atomic="false"></div>
+    <div id="modal-root"></div>
+    <div id="palette-root"></div>
+
+    <noscript>
+      <div class="noscript">识文台需要启用 JavaScript 才能运行，请在浏览器设置中开启后刷新页面。</div>
+    </noscript>
+
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>

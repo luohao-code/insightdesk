@@ -1,0 +1,90 @@
+"""Pydantic 数据结构包。"""
+
+from .ai import (
+    AIProcessRequest,
+    AIProcessResponse,
+    AIProviderInfo,
+    ChatRequest,
+    ChatResponse,
+    ConversationOut,
+    MessageOut,
+)
+from .common import ErrorBody, MessageResponse, Page, PageMeta
+from .history import (
+    BulkDeleteRequest,
+    DocumentListResponse,
+    DocumentOut,
+    DocumentPatch,
+    HistoryStats,
+)
+from .ocr import (
+    BatchRecognizeItem,
+    BatchRecognizeRequest,
+    EngineInfo,
+    OCRBlockOut,
+    RecognizeRequest,
+    RecognizeResponse,
+    UploadResponse,
+    UploadedImage,
+)
+from .stats import OverviewStats, ProviderTestRequest, ProviderTestResponse, SettingsOut, SettingsUpdate
+from .task import (
+    BatchCreateResponse,
+    BatchDetail,
+    BatchListResponse,
+    BatchOut,
+    BatchProgressEvent,
+    RetryRequest,
+    TaskOut,
+)
+from .web import (
+    WebExtractRequest,
+    WebExtractResponse,
+    WebHistoryItem,
+    WebOpenRequest,
+    WebOpenResponse,
+)
+
+__all__ = [
+    "AIProcessRequest",
+    "AIProcessResponse",
+    "AIProviderInfo",
+    "BatchCreateResponse",
+    "BatchDetail",
+    "BatchListResponse",
+    "BatchOut",
+    "BatchProgressEvent",
+    "BatchRecognizeItem",
+    "BatchRecognizeRequest",
+    "BulkDeleteRequest",
+    "ChatRequest",
+    "ChatResponse",
+    "ConversationOut",
+    "DocumentListResponse",
+    "DocumentOut",
+    "DocumentPatch",
+    "EngineInfo",
+    "ErrorBody",
+    "HistoryStats",
+    "MessageOut",
+    "MessageResponse",
+    "OCRBlockOut",
+    "OverviewStats",
+    "Page",
+    "PageMeta",
+    "ProviderTestRequest",
+    "ProviderTestResponse",
+    "RecognizeRequest",
+    "RecognizeResponse",
+    "RetryRequest",
+    "SettingsOut",
+    "SettingsUpdate",
+    "TaskOut",
+    "UploadResponse",
+    "UploadedImage",
+    "WebExtractRequest",
+    "WebExtractResponse",
+    "WebHistoryItem",
+    "WebOpenRequest",
+    "WebOpenResponse",
+]
