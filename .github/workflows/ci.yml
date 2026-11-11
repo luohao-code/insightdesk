@@ -61,6 +61,8 @@ jobs:
           assert manifest['start_url'] == './'
           html = (root / 'frontend/index.html').read_text(encoding='utf-8')
           refs = re.findall(r'(?:href|src)="\./([^"]+)"', html)
+          # 排除服务端路由（如 ./api/docs）与锚点，仅校验静态资源
+          refs = [ref for ref in refs if not ref.startswith(('api/', '#'))]
           missing = [ref for ref in refs if not (root / 'frontend' / ref).exists()]
           assert not missing, f'missing assets: {missing}'
           print(f'validated {len(refs)} asset references')
