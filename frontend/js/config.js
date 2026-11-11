@@ -9,24 +9,24 @@ export const REPO_URL = "https://github.com/luohao-code/insightdesk";
 
 export const TEAM = [
   {
-    name: "罗浩",
-    role: "项目负责人 / 架构与后端",
-    duty: "需求基线、系统架构、任务队列、网页提取、集成发布",
-    weight: "40%",
-    initial: "罗",
+    name: "杨文杰",
+    role: "项目负责人 / 小组长 / 前端负责人",
+    duty: "项目统筹与进度管理、设计系统、全部页面与组件、实时进度、评审与发布",
+    weight: "35%",
+    initial: "杨",
   },
   {
-    name: "杨文杰",
-    role: "前端负责人 / 交互与可视化",
-    duty: "设计系统、全部页面与组件、实时进度、可用性测试",
-    weight: "32%",
-    initial: "杨",
+    name: "罗浩",
+    role: "架构与后端负责人",
+    duty: "需求基线、系统架构、任务队列、网页提取、集成与阶段报告",
+    weight: "35%",
+    initial: "罗",
   },
   {
     name: "邹俊杰",
     role: "算法与质量负责人",
     duty: "OCR/AI 引擎适配、提示词工程、自动化测试、打包与手册",
-    weight: "28%",
+    weight: "30%",
     initial: "邹",
   },
 ];
