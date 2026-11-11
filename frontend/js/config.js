@@ -4,8 +4,8 @@
 
 export const APP_VERSION = "1.0.0";
 
-/** 仓库地址在发布后填入；未配置时指向帮助页。 */
-export const REPO_URL = "https://github.com/";
+/** 项目仓库地址。 */
+export const REPO_URL = "https://github.com/luohao-code/insightdesk";
 
 export const TEAM = [
   {

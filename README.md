@@ -1,5 +1,10 @@
 # 识文台 InsightDesk
 
+[![CI](https://github.com/luohao-code/insightdesk/actions/workflows/ci.yml/badge.svg)](https://github.com/luohao-code/insightdesk/actions/workflows/ci.yml)
+[![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 > OCR + AI 智能文字工作台：把图片与网页里的文字，变成可编辑、可检索、可导出的个人资产。
 
 识文台是一套**基于 Web** 的文字处理应用，使用 Python + FastAPI 提供后端能力，浏览器原生 ES Module 构建前端，支持本地离线 OCR 与多家云端 OCR / 大模型。除 Web 形态外，项目提供桌面启动器：双击 exe 后启动本地服务，并**自动打开默认浏览器**。
